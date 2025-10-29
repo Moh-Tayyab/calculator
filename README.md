@@ -1,14 +1,15 @@
 # Calculator Project
 
-A simple command-line calculator application built with Python. This project demonstrates basic arithmetic operations and includes unit tests for functionality verification.
+A simple command-line calculator application built with Python. This project demonstrates basic arithmetic operations and provides an interactive interface for user input.
 
 ## Features
 
+*   **Interactive Interface:** Users can input two numbers and select an arithmetic operator.
+*   **Integer Operations:** The calculator is designed to work with integer inputs and provides integer results (division results are truncated).
 *   **Addition:** Add two numbers.
 *   **Subtraction:** Subtract one number from another.
 *   **Multiplication:** Multiply two numbers.
 *   **Division:** Divide one number by another, with error handling for division by zero.
-*   **Unit Tests:** Comprehensive tests for all arithmetic operations using `pytest`.
 
 ## Installation
 
@@ -29,11 +30,11 @@ To set up the project locally, follow these steps:
     ```bash
     uv pip install .
     ```
-    This will create a virtual environment and install `pytest`.
+    This will create a virtual environment.
 
 ## How to Run
 
-You can interact with the calculator functions directly in a Python interpreter.
+To run the interactive calculator:
 
 1.  **Activate the virtual environment:**
     ```bash
@@ -41,64 +42,27 @@ You can interact with the calculator functions directly in a Python interpreter.
     # source .venv/bin/activate   # On Linux/macOS
     ```
 
-2.  **Start the Python interpreter:**
+2.  **Execute the main script:**
     ```bash
-    python
+    python main.py
     ```
-
-3.  **Import and use the calculator functions:**
-    ```python
-    from src.calculator import add, subtract, multiply, divide
-
-    # Example Usage:
-    print(f"5 + 3 = {add(5, 3)}")
-    print(f"10 - 4 = {subtract(10, 4)}")
-    print(f"6 * 7 = {multiply(6, 7)}")
-    print(f"10 / 2 = {divide(10, 2)}")
-
-    try:
-        divide(1, 0)
-    except ValueError as e:
-        print(f"Error: {e}")
-    ```
-
-## How to Run Tests
-
-The project includes unit tests using `pytest`.
-
-1.  **Activate the virtual environment:**
-    ```bash
-    .\.venv\Scripts\Activate.ps1  # On Windows PowerShell
-    # source .venv/bin/activate   # On Linux/macOS
-    ```
-
-2.  **Run the tests:**
-    ```bash
-    pytest
-    ```
-
-    You should see output indicating that all tests passed.
+    The calculator will then prompt you to enter numbers and select an operator.
 
 ## Usage Examples
 
-Here are some examples of how to use the calculator functions:
+When you run `python main.py`, you will be prompted as follows:
 
-```python
-from src.calculator import add, subtract, multiply, divide
-
-result_add = add(15, 7)  # 22
-result_subtract = subtract(20, 8) # 12
-result_multiply = multiply(4, 9) # 36
-result_divide = divide(100, 10) # 10.0
-
-print(f"Addition: {result_add}")
-print(f"Subtraction: {result_subtract}")
-print(f"Multiplication: {result_multiply}")
-print(f"Division: {result_divide}")
-
-# Division by zero error handling
-try:
-    divide(5, 0)
-except ValueError as e:
-    print(f"Caught error: {e}")
+```
+Welcome to the Professional Calculator!
+Enter first number: 10
+Enter operator (+, -, *, /): +
+Enter second number: 5
+Result: 10 + 5 = 15
+Do you want to perform another calculation? (yes/no): yes
+Enter first number: 10
+Enter operator (+, -, *, /): /
+Enter second number: 3
+Result: 10 / 3 = 3  # Note: Result is truncated to an integer
+Do you want to perform another calculation? (yes/no): no
+Thank you for using the calculator. Goodbye!
 ```
